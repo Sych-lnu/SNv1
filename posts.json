@@ -1,0 +1,276 @@
+[{
+  "_id": {
+    "$oid": "63413c1429014ab900a02418"
+  },
+  "FirstName": "Oleksandr",
+  "LastName": "Sych",
+  "Email": "fake_Sych@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "anime"
+  ],
+  "Friends": [
+    "fake_Koval@gmail.com",
+    "default@gmail.com"
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a02419"
+  },
+  "FirstName": "Nazar",
+  "LastName": "Protsiv",
+  "Email": "fake_Protsiv@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "programming"
+  ],
+  "Friends": [],
+  "Posts": [
+    {
+      "Content": "And my first",
+      "Author": "fake_Protsiv@gmail.com",
+      "Comments": [],
+      "Reactions": [
+        {
+          "Description": "like",
+          "Count": 0
+        },
+        {
+          "Description": "cool",
+          "Count": 0
+        },
+        {
+          "Description": "dislike",
+          "Count": 0
+        }
+      ],
+      "CreateTime": {
+        "$date": {
+          "$numberLong": "1665233628840"
+        }
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241a"
+  },
+  "FirstName": "Bohdan",
+  "LastName": "Laba",
+  "Email": "fake_Laba@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "anime"
+  ],
+  "Friends": [
+    "fake_Sych@gmail.com"
+  ],
+  "Posts": [
+    {
+      "Content": "Lets watch some anime",
+      "Author": "fake_Laba@gmail.com",
+      "Comments": [
+        {
+          "Content": "that is cool idea",
+          "Author": "fake_Laba@gmail.com",
+          "Reactions": [
+            {
+              "Description": "like",
+              "Count": 0
+            },
+            {
+              "Description": "cool",
+              "Count": 0
+            },
+            {
+              "Description": "dislike",
+              "Count": 0
+            }
+          ],
+          "CreateTime": {
+            "$date": {
+              "$numberLong": "1665236695026"
+            }
+          }
+        }
+      ],
+      "Reactions": [
+        {
+          "Description": "like",
+          "Count": 1
+        },
+        {
+          "Description": "cool",
+          "Count": 0
+        },
+        {
+          "Description": "dislike",
+          "Count": 0
+        }
+      ],
+      "CreateTime": {
+        "$date": {
+          "$numberLong": "1665229966124"
+        }
+      }
+    },
+    {
+      "Content": "And do hometasks",
+      "Author": "fake_Laba@gmail.com",
+      "Comments": [],
+      "Reactions": [
+        {
+          "Description": "like",
+          "Count": 0
+        },
+        {
+          "Description": "cool",
+          "Count": 0
+        },
+        {
+          "Description": "dislike",
+          "Count": 0
+        }
+      ],
+      "CreateTime": {
+        "$date": {
+          "$numberLong": "1665229990203"
+        }
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241b"
+  },
+  "FirstName": "Kateryna",
+  "LastName": "Tymoshchuk",
+  "Email": "fake_Tymoshchuk@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [],
+  "Friends": []
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241c"
+  },
+  "FirstName": "Nazar",
+  "LastName": "Koval",
+  "Email": "fake_Koval@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "programming"
+  ],
+  "Friends": [],
+  "Posts": [
+    {
+      "Content": "I think so",
+      "Author": "fake_Koval@gmail.com",
+      "Comments": [
+        {
+          "Content": "Cool",
+          "Author": "fake_Sych@gmail.com",
+          "Reactions": [
+            {
+              "Description": "like",
+              "Count": 0
+            },
+            {
+              "Description": "cool",
+              "Count": 0
+            },
+            {
+              "Description": "dislike",
+              "Count": 0
+            }
+          ],
+          "CreateTime": {
+            "$date": {
+              "$numberLong": "1665239741581"
+            }
+          }
+        }
+      ],
+      "Reactions": [
+        {
+          "Description": "like",
+          "Count": 0
+        },
+        {
+          "Description": "cool",
+          "Count": 0
+        },
+        {
+          "Description": "dislike",
+          "Count": 0
+        }
+      ],
+      "CreateTime": {
+        "$date": {
+          "$numberLong": "1665230152395"
+        }
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241d"
+  },
+  "FirstName": "Andriy",
+  "LastName": "Shewchuk",
+  "Email": "fake_Shewchuk@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "games",
+    "films"
+  ],
+  "Friends": [
+    "fake_Laba@gmail.com",
+    "fake_Sych@gmail.com"
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241e"
+  },
+  "FirstName": "Iryna",
+  "LastName": "Andrushko",
+  "Email": "fake_Andrushko@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [],
+  "Friends": []
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a0241f"
+  },
+  "FirstName": "Volodymyr",
+  "LastName": "Samotii",
+  "Email": "fake_Samotii@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [
+    "games"
+  ],
+  "Friends": [
+    "fake_Sych@gmail.com"
+  ]
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a02420"
+  },
+  "FirstName": "Olga",
+  "LastName": "Voitsiv",
+  "Email": "fake_Voitsiv@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [],
+  "Friends": []
+},{
+  "_id": {
+    "$oid": "63413c1429014ab900a02421"
+  },
+  "FirstName": "Yarema",
+  "LastName": "Motruk",
+  "Email": "fake_Motruk@gmail.com",
+  "Password": "defaultPass",
+  "Interests": [],
+  "Friends": [
+    "fake_Voitsiv@gmail.com"
+  ]
+}]
