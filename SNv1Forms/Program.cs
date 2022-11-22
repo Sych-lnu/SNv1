@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using ServiceStack;
 using SNv1;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace SNv1Forms
         public static MongoClient client = new MongoClient("mongodb+srv://OleksandrSych:Ababagalamaga1977@socialnetwork.n4iabj4.mongodb.net/test");
         public static IMongoDatabase database = client.GetDatabase("sn");
         public static User currentUser;
+        public static string host = "127.0.0.1";
+        public static int port = 6379; 
         [STAThread]
         static void Main()
         {

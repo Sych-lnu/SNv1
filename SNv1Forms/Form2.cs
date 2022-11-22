@@ -2,14 +2,9 @@
 using SNv1;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+using RedisCacheDAL;
 
 namespace SNv1Forms
 {
@@ -33,22 +28,39 @@ namespace SNv1Forms
             index = -1;
             page = 1;
             PostsList.Items.Clear();
-            var usersCollection = Program.database.GetCollection<User>("posts");
-            var postsDefinition = Builders<User>.Projection.Include("Posts");
-            var postsResult = usersCollection.Find(Builders<User>.Filter.Empty).Project<User>(postsDefinition).ToList();
-            var allPosts = postsResult[0].Posts;
-            for (int i = 1; i < postsResult.Count; i++)
+            WriterDAL writer = new WriterDAL(Program.host, Program.port);
+            ReaderDAL reader = new ReaderDAL(Program.host, Program.port);
+            if (reader.CheckExisting("post-content") == 1)
             {
-                for (int j = 0; j < postsResult[i].Posts.Count; j++)
+                var allPosts = reader.GetList("post-content");
+                for (int i = 0; i < allPosts.Count(); i++)
                 {
-                    allPosts.Add(postsResult[i].Posts[j]);
+                    PostsList.Items.Add(allPosts[i]);
                 }
+                //PostsList.Items.Add("cache used");
             }
-            Sort(allPosts);
-            for (int i = 0; i < allPosts.Count(); i++)
+            else
             {
-                string itemText = allPosts[i].Author + ": " + allPosts[i].Content;
-                PostsList.Items.Add(itemText);
+                var usersCollection = Program.database.GetCollection<User>("posts");
+                var postsDefinition = Builders<User>.Projection.Include("Posts");
+                var postsResult = usersCollection.Find(Builders<User>.Filter.Empty).Project<User>(postsDefinition).ToList();
+                var allPosts = postsResult[0].Posts;
+                for (int i = 1; i < postsResult.Count; i++)
+                {
+                    for (int j = 0; j < postsResult[i].Posts.Count; j++)
+                    {
+                        allPosts.Add(postsResult[i].Posts[j]);
+                    }
+                }
+                Sort(allPosts);
+                List<string> postsInfo = new List<string>();
+                for (int i = 0; i < allPosts.Count(); i++)
+                {
+                    string itemText = allPosts[i].Author + ": " + allPosts[i].Content;
+                    postsInfo.Add(itemText);
+                    PostsList.Items.Add(itemText);
+                }
+                writer.SaveList("post-content", postsInfo);
             }
             label1.Text = "Create New Post!";
         }
